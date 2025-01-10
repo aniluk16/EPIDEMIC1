@@ -1,16 +1,17 @@
-/* styles.css */
+/* NHS Frontend styles */
 :root {
     --nhs-blue: #005EB8;
-    --nhs-dark-blue: #003087;
-    --nhs-bright-blue: #0072CE;
-    --nhs-light-blue: #41B6E6;
     --nhs-white: #FFFFFF;
     --nhs-black: #212B32;
     --nhs-grey: #425563;
     --nhs-light-grey: #E8EDEE;
+    --nhs-bright-blue: #007AC2;
+    --nhs-dark-blue: #003087;
     --nhs-green: #007F3B;
     --nhs-red: #DA291C;
     --nhs-yellow: #FFB81C;
+    --nhs-warm-yellow: #FFB81C;
+    --nhs-purple: #330072;
 }
 
 body {
@@ -22,211 +23,216 @@ body {
     line-height: 1.5;
 }
 
-.nhs-header {
+/* NHS Header */
+.nhsuk-header {
     background-color: var(--nhs-blue);
-    padding: 1rem;
-    width: 100%;
+    padding: 1rem 0;
     border-bottom: 4px solid var(--nhs-yellow);
 }
 
-.nhs-header-content {
-    max-width: 960px;
+.nhsuk-header__container {
+    max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nhs-logo {
-    color: var(--nhs-white);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 0.5rem 0;
-}
-
-.auth-buttons button {
-    background-color: var(--nhs-white);
-    color: var(--nhs-blue);
-    border: none;
-    padding: 8px 16px;
-    margin-left: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.auth-buttons button:hover {
-    background-color: var(--nhs-light-grey);
-}
-
-.container {
-    max-width: 960px;
-    margin: 2rem auto;
     padding: 0 1rem;
 }
 
-.nhs-breadcrumb {
-    background-color: var(--nhs-white);
-    padding: 0.75rem 1rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--nhs-light-grey);
-}
-
-.nhs-heading {
-    color: var(--nhs-black);
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.nhs-card {
-    background-color: var(--nhs-white);
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border: 1px solid var(--nhs-light-grey);
-}
-
-.nhs-card h2 {
-    color: var(--nhs-blue);
+.nhsuk-header__logo {
+    color: white;
     font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-.symptom-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+.nhsuk-header__nav {
+    margin-top: 1rem;
 }
 
-.symptom-group label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    background-color: var(--nhs-light-grey);
-    border-radius: 4px;
-}
-
-.nhs-button {
-    background-color: var(--nhs-green);
-    color: var(--nhs-white);
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s;
-}
-
-.nhs-button:hover {
-    background-color: #005A30;
-}
-
-.risk-display {
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-weight: 600;
-    border-left: 4px solid;
-}
-
-.risk-high {
-    background-color: #FFF4F4;
-    border-color: var(--nhs-red);
-    color: var(--nhs-red);
-}
-
-.risk-low {
-    background-color: #EFF8F3;
-    border-color: var(--nhs-green);
-    color: var(--nhs-green);
-}
-
-.advice-list {
-    list-style-type: none;
+.nhsuk-header__navigation {
+    list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
 }
 
-.advice-list li {
-    padding: 1rem;
-    background-color: #F0F4F5;
-    margin-bottom: 0.5rem;
-    border-left: 4px solid var(--nhs-blue);
+.nhsuk-header__navigation-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
 }
 
-.history-entry {
+/* NHS Hero Section */
+.nhsuk-hero {
+    background-color: var(--nhs-dark-blue);
+    color: white;
+    padding: 2rem 0;
+}
+
+.nhsuk-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nhsuk-hero__content {
+    max-width: 700px;
+}
+
+/* NHS Main Content */
+.nhsuk-main-wrapper {
+    padding: 2rem 0;
+}
+
+.nhsuk-width-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.nhsuk-grid-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+/* NHS Cards */
+.nhsuk-card {
+    background: white;
     border: 1px solid var(--nhs-light-grey);
-    padding: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
-.history-entry h3 {
+.nhsuk-card__content {
+    padding: 1.5rem;
+}
+
+.nhsuk-card__heading {
+    font-size: 1.5rem;
     color: var(--nhs-blue);
     margin: 0 0 1rem 0;
 }
 
-.login-modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+/* NHS Form Elements */
+.nhsuk-form-group {
+    margin-bottom: 1.5rem;
 }
 
-.login-modal.active {
+.nhsuk-checkboxes__item {
     display: flex;
-}
-
-.modal-content {
-    background-color: var(--nhs-white);
-    padding: 2rem;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--nhs-light-grey);
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
     border-radius: 4px;
-    width: 100%;
-    max-width: 400px;
-    position: relative;
 }
 
-.close-modal {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    background: none;
+.nhsuk-button {
+    background-color: var(--nhs-green);
+    color: white;
+    padding: 0.75rem 1.5rem;
     border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--nhs-grey);
-}
-
-.login-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 1rem;
-    border: 2px solid var(--nhs-grey);
+    border-radius: 4px;
     font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.login-form input:focus {
-    border-color: var(--nhs-yellow);
-    outline: none;
+.nhsuk-button:hover {
+    background-color: #005c2b;
 }
 
-@media (max-width: 640px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
-    .nhs-card {
-        padding: 1rem;
-    }
-} 
+/* NHS Care Cards */
+.nhsuk-care-card {
+    margin-bottom: 2rem;
+    border: 1px solid var(--nhs-light-grey);
+    border-radius: 4px;
+}
+
+.nhsuk-care-card--primary {
+    border-top: 4px solid var(--nhs-blue);
+}
+
+.nhsuk-care-card--urgent {
+    border-top: 4px solid var(--nhs-red);
+}
+
+.nhsuk-care-card__heading-container {
+    padding: 1rem;
+    background-color: var(--nhs-light-grey);
+}
+
+.nhsuk-care-card__content {
+    padding: 1.5rem;
+    background: white;
+}
+
+/* NHS Warning Callout */
+.nhsuk-warning-callout {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #fff5e5;
+    border: 1px solid var(--nhs-warm-yellow);
+    border-left: 4px solid var(--nhs-warm-yellow);
+}
+
+/* NHS Action Link */
+.nhsuk-action-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--nhs-blue);
+    margin: 1rem 0;
+}
+
+/* NHS Inset Text */
+.nhsuk-inset-text {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--nhs-grey);
+    background: var(--nhs-light-grey);
+}
+
+/* Risk Display */
+.risk-display {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.risk-high {
+    background-color: #fff1f0;
+    border-left: 4px solid var(--nhs-red);
+    color: var(--nhs-red);
+}
+
+.risk-low {
+    background-color: #f0f6f1;
+    border-left: 4px solid var(--nhs-green);
+    color: var(--nhs-green);
+}
+
+/* NHS Footer */
+.nhsuk-footer {
+    background-color: var(--nhs-grey);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.nhsuk-footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nhsuk-footer__list-item {
+    margin-bottom: 0.5rem;
+}
+
+.nhsuk-footer__list-item a {
+    color: white;
+    text-decoration: none;
+}
