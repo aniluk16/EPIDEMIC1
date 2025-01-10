@@ -1,73 +1,150 @@
 /* styles.css */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #5c6ac4;
+    --accent-color: #45b7af;
+    --background-light: #f8f9fa;
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+    --danger-color: #ff6b6b;
+    --success-color: #51cf66;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
 }
 
-h1 {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 30px;
+.nav-bar {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
 }
 
-h2 {
-    color: #34495e;
-    margin-top: 25px;
+.nav-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.auth-buttons button {
+    background-color: transparent;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-buttons button:hover {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+}
+
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
 }
 
 .form-section {
-    background-color: #f8f9fa;
-    padding: 20px;
+    background-color: white;
+    padding: 2rem;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
 }
 
 .symptom-group {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    cursor: pointer;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .submit-btn {
-    background-color: #3498db;
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--text-light);
     border: none;
     padding: 12px 24px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    width: 100%;
 }
 
 .submit-btn:hover {
-    background-color: #2980b9;
+    background-color: #3a9c95;
+    transform: translateY(-1px);
 }
 
 .risk-display {
-    padding: 15px;
+    padding: 1rem;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 .risk-high {
-    background-color: #ff6b6b;
-    color: white;
+    background-color: var(--danger-color);
+    color: var(--text-light);
 }
 
 .risk-low {
-    background-color: #51cf66;
-    color: white;
+    background-color: var(--success-color);
+    color: var(--text-light);
 }
 
 .advice-list {
@@ -76,34 +153,41 @@ label {
 }
 
 .advice-list li {
-    padding: 10px;
-    background-color: #f8f9fa;
-    margin-bottom: 5px;
+    padding: 1rem;
+    background-color: white;
+    margin-bottom: 0.5rem;
     border-radius: 4px;
-}
-
-.history-display {
-    margin-top: 20px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent-color);
 }
 
 .history-entry {
-    background-color: #f8f9fa;
-    padding: 15px;
-    margin-bottom: 10px;
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
     border-radius: 4px;
+    box-shadow: var(--shadow);
 }
 
 .history-entry h3 {
-    margin: 0 0 10px 0;
-    color: #2c3e50;
+    margin: 0 0 1rem 0;
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
 }
 
-.history-entry ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
-.history-entry li {
-    margin: 5px 0;
+.section-title {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
 }
